@@ -8,13 +8,15 @@ buildscript {
 }
 apply plugin: 'android-library'
 
+archivesBaseName = 'styled-dialogs'
+
 dependencies {
     compile 'com.android.support:support-v4:18.0.+'
 }
 
 android {
     compileSdkVersion 18
-    buildToolsVersion "18"
+    buildToolsVersion "18.0.1"
 
     defaultConfig {
         minSdkVersion 8
@@ -28,3 +30,4 @@ android {
         }
     }
 }
+
