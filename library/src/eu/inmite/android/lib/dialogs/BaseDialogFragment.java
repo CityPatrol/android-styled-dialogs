@@ -47,6 +47,10 @@ public abstract class BaseDialogFragment extends DialogFragment {
 		Drawable dialogBackground = a.getDrawable(R.styleable.DialogStyle_dialogBackground);
 		a.recycle();
 		dialog.getWindow().setBackgroundDrawable(dialogBackground);
+		Bundle args = getArguments();
+		if (args != null) {
+			dialog.setCanceledOnTouchOutside(args.getBoolean(BaseDialogBuilder.ARG_CANCELABLE_ON_TOUCH_OUTSIDE));
+		}
 		return dialog;
 	}
 
@@ -144,6 +148,10 @@ public abstract class BaseDialogFragment extends DialogFragment {
 			this.mContext = context;
 			this.mContainer = container;
 			this.mInflater = inflater;
+		}
+
+		public LayoutInflater getLayoutInflater() {
+			return mInflater;
 		}
 
 		public Builder setTitle(int titleId) {
