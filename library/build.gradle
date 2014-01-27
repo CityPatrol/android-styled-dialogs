@@ -15,6 +15,11 @@ dependencies {
 }
 
 android {
+
+    lintOptions {
+        abortOnError false
+    }
+
     compileSdkVersion 18
     buildToolsVersion "18.0.1"
 
